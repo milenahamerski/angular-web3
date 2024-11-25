@@ -5,12 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './view/navbar/navbar.component';
 import { HomeComponent } from './view/home/home.component';
+import { DestinosEmAltaComponent } from './view/destinos-em-alta/destinos-em-alta.component';
+import { ContadorViagemComponent } from './view/contador-viagem/contador-viagem.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    DestinosEmAltaComponent,
+    ContadorViagemComponent
   ],
   imports: [
     BrowserModule,
