@@ -1,0 +1,52 @@
+<div class="h-screen w-screen bg-sand flex items-center justify-center">
+    <div class="flex w-[99%] h-[98%] md:w-[99%] md:h-[98%] lg:w-[99%] lg:h-[98%] bg-white shadow-lg overflow-hidden">
+      
+      <div class="w-1/2 bg-blue text-white flex flex-col justify-between py-32">
+        <div class="text-center">
+          <h2 class="text-3xl font-italiana mb-4">Faça já o seu login</h2>
+          <p class="text-light-gray">Acesse sua conta e aproveite nossos conteúdos exclusivos!</p>
+        </div>
+        <div class="text-center">
+            <p class="mb-2">Ainda não tem uma conta? Cadastre-se</p>
+            <a 
+              routerLink="/signin"
+              class="px-2 py-2 bg-sand font-semibold rounded hover:bg-orange hover:text-white transition">
+              Cadastro
+            </a>
+          </div>
+          
+      </div>
+  
+      <div class="w-1/2 p-8 flex flex-col justify-center">
+        <h2 class="text-2xl font-italiana mb-6 text-orange">Faça o Login</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold text-chalk mb-1" for="email">Email</label>
+            <input 
+              id="email"
+              type="email"
+              class="w-full px-4 py-2 border border-light-gray rounded focus:outline-none focus:ring-2 focus:ring-orange"
+              placeholder="Seu email"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-chalk mb-1" for="password">Senha</label>
+            <input 
+              id="password"
+              type="password"
+              class="w-full px-4 py-2 border border-light-gray rounded focus:outline-none focus:ring-2 focus:ring-orange"
+              placeholder="Sua senha"
+            />
+          </div>
+          <button 
+            type="submit"
+            class="w-full py-2 bg-sand text-white rounded font-semibold hover:bg-blue transition">
+            Entrar
+          </button>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+  
+  
