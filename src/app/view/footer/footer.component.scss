@@ -1,0 +1,16 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  main {
+    min-height: 80vh; /* Ajuste conforme necessário */
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f3f4f6; /* Cor de fundo do rodapé */
+  }
+  
