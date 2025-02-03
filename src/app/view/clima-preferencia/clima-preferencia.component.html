@@ -1,12 +1,27 @@
-<div class="p-6 bg-sand text-chalk rounded-lg shadow-md">
-    <h2 class="text-xl font-italiana mb-4">Vamos começar a criar o roteiro?</h2>
-    <p class="mb-4">Qual sua preferência de clima?</p>
-    
-    <div class="flex gap-4">
-      <button (click)="onButtonClick('Primavera')" class="btn-clima">Primavera</button>
-      <button (click)="onButtonClick('Verão')" class="btn-clima">Verão</button>
-      <button (click)="onButtonClick('Outono')" class="btn-clima">Outono</button>
-      <button (click)="onButtonClick('Inverno')" class="btn-clima">Inverno</button>
+<div class="flex flex-wrap justify-center items-center min-h-screen gap-6">
+  <div 
+    *ngFor="let season of seasons" 
+    (click)="selectSeason(season)"
+    class="cursor-pointer transition-all duration-500 transform-gpu"
+    [ngStyle]="{'background-image': 'url(' + getSeasonImage(season) + ')'}" 
+  >
+    <div class="parent">
+      <div class="card">
+        <!-- Content Box -->
+        <div class="content-box">
+          <span class="card-title">{{ season }} Card</span>
+          <p class="card-content">
+            Descrição da estação {{ season }}.
+          </p>
+          <span class="see-more">See More</span>
+        </div>
+
+        <!-- Date Box -->
+        <div class="date-box">
+          <span class="month">{{ season }}</span>
+          <span class="date">{{ getSeasonDate(season) }}</span>
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>

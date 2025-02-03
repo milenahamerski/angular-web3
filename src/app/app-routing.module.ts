@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },      
   { path: 'login', component: LoginComponent }, 
   { path: 'signin', component: SigninComponent }, 
-  { path: 'climapreferencia', component: ClimaPreferenciaComponent }, // Corrigido o nome aqui
+  { path: 'clima-preferencia', component: ClimaPreferenciaComponent }, // Corrigido o nome aqui
 ];
 
 @NgModule({
