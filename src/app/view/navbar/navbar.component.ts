@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  isDarkMode: boolean = false; 
 
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode; 
+  }
 }
