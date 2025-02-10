@@ -1,27 +1,8 @@
-<div class="flex flex-wrap justify-center items-center min-h-screen gap-6">
-  <div 
-    *ngFor="let season of seasons" 
-    (click)="selectSeason(season)"
-    class="cursor-pointer transition-all duration-500 transform-gpu"
-    [ngStyle]="{'background-image': 'url(' + getSeasonImage(season) + ')'}" 
-  >
-    <div class="parent">
-      <div class="card">
-        <!-- Content Box -->
-        <div class="content-box">
-          <span class="card-title">{{ season }} Card</span>
-          <p class="card-content">
-            Descrição da estação {{ season }}.
-          </p>
-          <span class="see-more">See More</span>
-        </div>
-
-        <!-- Date Box -->
-        <div class="date-box">
-          <span class="month">{{ season }}</span>
-          <span class="date">{{ getSeasonDate(season) }}</span>
-        </div>
-      </div>
-    </div>
+<div class="center-container flex flex-col items-center min-h-screen gap-10 pt-60">
+  <h2 class="text-blue font-italiana text-4xl text-center">
+    Qual a época do ano que você gostaria de viajar?
+  </h2>
+  <div class="flex flex-wrap justify-center gap-6">
+    <app-polaroid-button></app-polaroid-button>
   </div>
 </div>

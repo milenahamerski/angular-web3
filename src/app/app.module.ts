@@ -10,7 +10,13 @@ import { LoginComponent } from './view/login/login.component';
 import { SigninComponent } from './view/signin/signin.component';
 import { ClimaPreferenciaComponent } from './view/clima-preferencia/clima-preferencia.component';
 import { LoginFormComponent } from './view/login-form/login-form.component';
-import { SignupPromptComponent } from './view/signup-prompt/signup-prompt.component'; // Corrigido o caminho aqui
+import { SignupPromptComponent } from './view/signup-prompt/signup-prompt.component';
+import { PolaroidButtonComponent } from './view/polaroid-button/polaroid-button.component';
+import { ObjetivoPreferenciaComponent } from './view/objetivo-preferencia/objetivo-preferencia.component';
+import { PolaroidObjetivoComponent } from './view/polaroid-objetivo/polaroid-objetivo.component';
+import { FormularioPreferenciaComponent } from './view/formulario-preferencia/formulario-preferencia.component';
+import { ComoFuncionaComponent } from './view/como-funciona/como-funciona.component';
+import { RoteiroComponent } from './view/roteiro/roteiro.component'; 
 
 @NgModule({
   declarations: [
@@ -21,7 +27,13 @@ import { SignupPromptComponent } from './view/signup-prompt/signup-prompt.compon
     SigninComponent,
     ClimaPreferenciaComponent,
     LoginFormComponent,
-    SignupPromptComponent, 
+    SignupPromptComponent,
+    PolaroidButtonComponent,
+    ObjetivoPreferenciaComponent,
+    PolaroidObjetivoComponent,
+    FormularioPreferenciaComponent,
+    ComoFuncionaComponent,
+    RoteiroComponent
   ],
   imports: [
     BrowserModule,
