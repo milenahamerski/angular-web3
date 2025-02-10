@@ -1,0 +1,61 @@
+<div class="relative min-h-screen bg-gray-100">
+  <img src="assets/images/path.png" class="absolute w-full h-full object-cover" alt="Background Image">
+
+  <div class="flex justify-center items-center min-h-screen bg-opacity-50 bg-gray-100">
+    <div class="card form-preference w-full max-w-md bg-yellow-50 shadow-lg p-6 rounded-lg relative z-10">
+      <label class="title text-2xl font-semibold mb-4">Preferências de Viagem</label>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <span>Quantos dias é sua viagem?</span>
+            <input type="number" placeholder="Digite o número de dias" class="input_field w-full" [(ngModel)]="diasViagem">
+
+            <!--? O NUMERO PRECISA SER > 0-->
+            <div *ngIf="diasViagem !== null && diasViagem <= 0">
+              <p class="text-red-500 text-sm">O número de dias deve ser maior que 0.</p>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <span>Qual é seu budget para viagem?</span>
+            <input type="number" placeholder="Digite seu orçamento" class="input_field w-full" [(ngModel)]="budget">
+            
+            <!--? O NUMERO PRECISA SER > 0-->
+            <div *ngIf="!validateBudget() && budget">
+              <p class="text-red-500 text-sm">O orçamento deve ser um número positivo.</p>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <span>Qual é o local da sua viagem?</span>
+            <input type="text" placeholder="Digite o local" class="input_field w-full" [(ngModel)]="localViagem">
+            <!--? O LOCAL DA VIAGEM E OBRIGATORIO PARA ENVIAR O FORMS-->
+            <div *ngIf="!localViagem">
+              <p class="text-red-500 text-sm">O local da viagem é obrigatório.</p>
+            </div>
+          </div>
+          <hr>
+          <div class="flex items-center">
+            <input type="checkbox" [(ngModel)]="indoTrabalho" (change)="toggleTrabalho()" class="form-checkbox text-blue-500 w-5 h-5">
+            <label class="ml-2 text-sm text-chalk">Está indo a trabalho?</label>
+          </div>
+          <hr *ngIf="indoTrabalho">
+          <div *ngIf="indoTrabalho">
+            <span>Quantas horas livres tem por dia para turistar?</span>
+            <input type="number" placeholder="Digite as horas livres" class="input_field w-full" [(ngModel)]="horasTurismo">
+          </div>
+        </div>
+        <!--? BOTAO DESABILITADO SE AS REGRAS NAO FOREM RESPEITADAS-->
+        <button 
+        routerLink="/roteiro" 
+        class="mt-6 w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300 disabled:bg-light-gray disabled:hover:bg-light-gray disabled:cursor-not-allowed" 
+        (click)="gerarRoteiro()" 
+        [disabled]="!isFormValid()">
+        Gerar Roteiro
+      </button>
+            </div>
+    </div>
+  </div>
+  <img src="assets/images/mundo.png" class="absolute bottom-16 left-20 w-50 object-cover" alt="Top Left Image">
+  <img src="assets/images/polaroid1.png" class="absolute top-16 right-20 w-[30rem] object-cover" alt="Top Left Image">
+</div>

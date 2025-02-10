@@ -1,0 +1,70 @@
+.polaroid-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.polaroid-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  background: white;
+  padding: 10px; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  border: none;
+  width: 200px; 
+  height: 250px;
+
+
+  img {
+    width: 160px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .caption {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    text-align: center; 
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+  }
+
+  &.active {
+    background-color: theme('colors.orange') !important;  
+  }
+}
+
+.next-button {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 30px; 
+  padding: 15px 30px;
+  background-color: theme('colors.blue');
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  text-align: center; 
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.next-button:hover {
+  background-color: theme('colors.blue');
+  opacity: 0.8;
+}

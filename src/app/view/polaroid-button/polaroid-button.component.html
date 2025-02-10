@@ -1,0 +1,15 @@
+<div class="polaroid-buttons">
+  <button 
+    *ngFor="let season of ['Primavera', 'Verão', 'Outono', 'Inverno']"
+    (click)="toggleImage(season)"
+    [ngClass]="{ active: currentSeason === season }"
+    class="polaroid-button"
+  >
+    <img [src]="getImage(season)" alt="Polaroid Image" />
+    <span class="caption">{{ season }}</span>
+  </button>
+</div>
+
+<div routerLink = "/objetivo-preferencia" class="next-button">
+  Seguinte
+</div>
