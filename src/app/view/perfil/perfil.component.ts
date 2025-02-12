@@ -31,4 +31,3 @@ export class PerfilComponent {
     // Adicione aqui a lógica para logout (excluir token, redirecionar, etc.)
   }
 }
-
