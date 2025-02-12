@@ -1,0 +1,57 @@
+<div class="flex justify-center items-center min-h-screen bg-cover bg-center" style="background-image: url('/assets/images/home.png');">
+    <div class="bg-white/80 backdrop-blur-lg rounded-xl shadow-2xl p-8 w-full max-w-lg mt-10 transition duration-300 hover:scale-105">
+      
+      <!-- Foto de Perfil -->
+      <div class="flex justify-center">
+        <img class="w-28 h-28 rounded-full object-cover border-4 border-white shadow-md" src="/assets/images/home.png" alt="Foto de Perfil" />
+      </div>
+  
+      <h2 class="text-center text-3xl font-extrabold text-gray-800 mt-4 tracking-wide">{{ usuario.nome }}</h2>
+  
+      <!-- Informações Pessoais -->
+      <div class="mt-6 space-y-3 text-gray-700 text-lg">
+        <p><strong>Email:</strong> <span class="text-gray-600">{{ usuario.email }}</span></p>
+        <p><strong>Localização:</strong> <span class="text-gray-600">{{ usuario.localizacao }}</span></p>
+        <p><strong>Data de Criação:</strong> <span class="text-gray-600">{{ usuario.dataCriacao | date: 'dd/MM/yyyy' }}</span></p>
+      </div>
+  
+      <!-- Botões de Ações -->
+      <div class="flex justify-between mt-6">
+        <button class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+          (click)="editarPerfil()">4200
+          ✏️ Editar Perfil
+        </button>
+        <button class="bg-purple-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-300"
+          (click)="minhasViagens()">
+          🛫 Minhas Viagens
+        </button>
+      </div>
+  
+      <!-- Configurações -->
+      <div class="mt-8 space-y-4">
+        <div class="flex items-center justify-between">
+          <label for="notificacoes" class="text-lg font-medium text-gray-700">Ativar Notificações</label>
+          <input type="checkbox" id="notificacoes" [(ngModel)]="usuario.notificacoes" class="w-6 h-6 accent-green-500">
+        </div>
+        <div class="flex items-center justify-between">
+          <label for="tema" class="text-lg font-medium text-gray-700">Modo Claro/Escuro</label>
+          <input type="checkbox" id="tema" [(ngModel)]="usuario.temaEscuro" class="w-6 h-6 accent-green-500">
+        </div>
+      </div>
+  
+      <!-- Viagens -->
+      <h3 class="text-2xl font-semibold text-gray-700 mt-8">Minhas Viagens</h3>
+      <ul class="mt-4 space-y-3">
+        <li *ngFor="let viagem of usuario.viagens" class="bg-gray-200 p-3 rounded-lg text-gray-700 font-medium shadow-sm">
+          {{ viagem }}
+        </li>
+      </ul>
+  
+      <!-- Botão de Logout -->
+      <button class="w-full mt-8 py-3 bg-red-500 text-white font-semibold rounded-lg text-lg hover:bg-red-600 transition duration-300"
+        (click)="logout()">
+        🚪 Sair
+      </button>
+    </div>
+  </div>
+  
