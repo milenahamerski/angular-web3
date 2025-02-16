@@ -16,45 +16,44 @@ A avaliação da disciplina se dá pela entrega de um projeto de uma aplicação
 - [x] **ID4**: Incorporou componentes de frameworks CSS.
 - [x] **ID5**: Aplicou diretivas estruturais para exibir/ocultar conteúdo condicionalmente.
 - [x] **ID6**: Utilizou diretivas estruturais para criar listas dinâmicas.
-- [ ] **ID7**: Aplicou Pipes para formatar dados de maneira legível.
+- [x] **ID7**: Aplicou Pipes para formatar dados de maneira legível.
 
 ### RA3 - Sincronizar dados entre a interface gráfica e o modelo de dados
 
 - [x] **ID8**: Utilizou técnicas de one-way data binding.
 - [x] **ID9**: Aplicou event binding para capturar eventos do usuário.
 - [x] **ID10**: Implementou two-way data binding.
-- [ ] **ID11**: Fez uso de variáveis de template para manipulação dinâmica de dados.
+- [x] **ID11**: Fez uso de variáveis de template para manipulação dinâmica de dados.
 
 ### RA4 - Implementar comunicação eficaz entre componentes
 
-- [ ] **ID12**: Criou comunicação entre componentes não hierárquicos utilizando serviços.
-- [ ] **ID13**: Utilizou diretivas @Input e @Output para comunicação entre componentes.
+- [x] **ID12**: Criou comunicação entre componentes não hierárquicos utilizando serviços.
+- [x] **ID13**: Utilizou diretivas @Input e @Output para comunicação entre componentes.
 
 ### RA5 - Criar interfaces de navegação intuitivas e responsivas
 
-- [ ] **ID14**: Configurou rotas para navegação entre páginas.
-- [ ] **ID15**: Passou dados entre componentes usando parâmetros de rotas.
-- [ ] **ID16**: Criou navegação aninhada para representar hierarquias.
-- [ ] **ID17**: Aplicou guardas de rotas para controle de acesso.
+- [x] **ID14**: Configurou rotas para navegação entre páginas.
+- [x] **ID15**: Passou dados entre componentes usando parâmetros de rotas.
+- [x] **ID16**: Criou navegação aninhada para representar hierarquias.
+- [x] **ID17**: Aplicou guardas de rotas para controle de acesso.
 
 ### RA6 - Realizar requisições assíncronas para serviços web
 
-- [ ] **ID18**: Fez requisições assíncronas a uma API pública (GET).
-- [ ] **ID19**: Fez requisições assíncronas a uma API simulada (GET, POST, PUT, PATCH, DELETE).
-- [ ] **ID20**: Tratou respostas de sucesso e erros de requisições assíncronas.
-- [ ] **ID21**: Aplicou validações de entrada nos formulários.
-- [ ] **ID22**: Desabilitou o botão de submit com campos inválidos.
-- [ ] **ID23**: Utilizou Promises para tratar respostas assíncronas.
-- [ ] **ID24**: Utilizou Observables para tratar respostas assíncronas.
+- [x] **ID18**: Fez requisições assíncronas a uma API pública (GET).
+- [x] **ID19**: Fez requisições assíncronas a uma API simulada (GET, POST, PUT, PATCH, DELETE).
+- [x] **ID20**: Tratou respostas de sucesso e erros de requisições assíncronas.
+- [x] **ID21**: Aplicou validações de entrada nos formulários.
+- [x] **ID22**: Desabilitou o botão de submit com campos inválidos.
+- [x] **ID23**: Utilizou Promises para tratar respostas assíncronas.
+- [x] **ID24**: Utilizou Observables para tratar respostas assíncronas.
 
 ### RA7 - Gerenciar o código-fonte de maneira eficiente
 
-- [ ] **ID25**: Criou o repositório no GitHub com a estrutura do **Gitflow**.
-- [ ] **ID26**: Colaborou efetivamente com outros membros, resolvendo conflitos de código.
-- [ ] **ID27**: Planejou, configurou e executou o processo de build e deploy da aplicação.
+- [x] **ID25**: Criou o repositório no GitHub com a estrutura do **Gitflow**.
+- [x] **ID26**: Colaborou efetivamente com outros membros, resolvendo conflitos de código.
+- [x] **ID27**: Planejou, configurou e executou o processo de build e deploy da aplicação.
 
 ## 📂 Links importantes
 
-- Protótipos: [Link para Figma](#)
+- Protótipos: [https://www.figma.com/design/jOiTP4rxAaJDzGPnDZNpwi/Untitled?node-id=0-1&t=ppaJb3qFjNg7BTCP-1](#)
 - Deploy da aplicação: [Link para GitHub Pages](#)
-- Repositório no GitHub: [Link para Repositório](#)

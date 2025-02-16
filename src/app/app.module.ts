@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './view/navbar/navbar.component';
@@ -17,6 +16,12 @@ import { PolaroidObjetivoComponent } from './view/polaroid-objetivo/polaroid-obj
 import { FormularioPreferenciaComponent } from './view/formulario-preferencia/formulario-preferencia.component';
 import { ComoFuncionaComponent } from './view/como-funciona/como-funciona.component';
 import { RoteiroComponent } from './view/roteiro/roteiro.component'; 
+import { HttpClientModule } from '@angular/common/http';
+import { RoteiroCardsComponent } from './view/roteiro-cards/roteiro-cards.component';
+import { PerfilComponent } from './view/perfil/perfil.component';
+import { EditarPerfilComponent } from './view/editar-perfil/editar-perfil.component';
+import { MeusRoteirosComponent } from './view/meus-roteiros/meus-roteiros.component'; 
+
 
 @NgModule({
   declarations: [
@@ -33,12 +38,17 @@ import { RoteiroComponent } from './view/roteiro/roteiro.component';
     PolaroidObjetivoComponent,
     FormularioPreferenciaComponent,
     ComoFuncionaComponent,
-    RoteiroComponent
+    RoteiroComponent,
+    RoteiroCardsComponent,
+    PerfilComponent,
+    EditarPerfilComponent,
+    MeusRoteirosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

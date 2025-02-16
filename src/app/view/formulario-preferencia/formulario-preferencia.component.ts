@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'formulario-preferencia-viagem',
@@ -15,7 +16,10 @@ export class FormularioPreferenciaComponent implements OnInit {
   selectedSeason: string = ''; 
   selectedActivities: Set<string> = new Set(); 
 
-  constructor(private router: Router) {}
+  loading: boolean = false;  
+  loadingContent: boolean = false; 
+
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
     const viagemData = localStorage.getItem('viagemData');
@@ -29,8 +33,10 @@ export class FormularioPreferenciaComponent implements OnInit {
       this.selectedSeason = parsedData.selectedSeason ?? '';
 
       if (parsedData.selectedActivities) {
-        this.selectedActivities = new Set(parsedData.selectedActivities.split(','));
+        this.selectedActivities = new Set(parsedData.selectedActivities);
       }
+      
+      localStorage.removeItem('viagemData');
     }
   }
 
@@ -42,17 +48,35 @@ export class FormularioPreferenciaComponent implements OnInit {
 
   gerarRoteiro(): void {
     const viagemData = {
-      diasViagem: this.diasViagem,
+      diasDeViagem: this.diasViagem,
       budget: this.budget,
-      localViagem: this.localViagem,
-      indoTrabalho: this.indoTrabalho,
-      horasTurismo: this.horasTurismo,
-      selectedSeason: this.selectedSeason,
-      selectedActivities: Array.from(this.selectedActivities).join(',') 
+      local: this.localViagem,
+      viagemTrabalho: this.indoTrabalho,
+      horasLivresTurismo: this.horasTurismo,
+      clima: this.selectedSeason,
+      atividades: Array.from(this.selectedActivities)
     };
 
-    localStorage.setItem('viagemData', JSON.stringify(viagemData));
-    this.router.navigate(['/roteiro']);
+    this.loading = true;
+
+    this.http.post('http://127.0.0.1:8000/gerar-roteiro', viagemData).subscribe({
+      next: (response) => {
+        console.log('Roteiro gerado pela API:', response);
+        localStorage.setItem('roteiro', JSON.stringify(response)); 
+
+        this.loadingContent = true;
+
+        setTimeout(() => {
+          this.loadingContent = false; 
+          this.loading = false; 
+          this.router.navigate(['/roteiro']); 
+        }, 2000);
+      },
+      error: (error) => {
+        console.error('Erro ao gerar roteiro:', error);
+        this.loading = false; 
+      }
+    });
   }
 
   onSubmit(): void {
@@ -65,17 +89,14 @@ export class FormularioPreferenciaComponent implements OnInit {
     });
   }
 
-  // Adicionado método para validar budget
   validateBudget(): boolean {
     return this.budget !== null && this.budget > 0;
   }
 
-  // Corrigido erro TS2531 garantindo que diasViagem seja um número válido
   isDiasViagemValid(): boolean {
     return this.diasViagem !== null && !isNaN(this.diasViagem) && this.diasViagem > 0;
   }
 
-  // Adicionado método para validar se o formulário está completo e correto
   isFormValid(): boolean {
     return (
       this.isDiasViagemValid() &&

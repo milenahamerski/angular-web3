@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./polaroid-objetivo.component.scss']
 })
 export class PolaroidObjetivoComponent implements OnInit {
+  // Caminhos das imagens
   culturaHistoria = 'assets/images/cultura.jpg';
   aventuraAdrenalina = 'assets/images/aventura.png';
   pazTranquilidade = 'assets/images/praia.jpg';
@@ -13,14 +14,8 @@ export class PolaroidObjetivoComponent implements OnInit {
   comprasSouvenirs = 'assets/images/compras.jpg';
   vidaNoturnaFestas = 'assets/images/noite.jpg';
 
+  // Atividades selecionadas e lista de todas as atividades
   selectedActivities: Set<string> = new Set();
-  selectedSeason: string = '';
-  diasViagem: number | null = null;
-  budget: number | null = null;
-  localViagem: string = '';
-  indoTrabalho: boolean = false;
-  horasTurismo: number | null = null;
-
   activities = [
     'Cultura e História',
     'Aventura e Adrenalina',
@@ -30,50 +25,72 @@ export class PolaroidObjetivoComponent implements OnInit {
     'Vida Noturna e Festas'
   ];
 
+  // Mapeamento de atividades para suas imagens
+  activityImages: { [key: string]: string } = {
+    'Cultura e História': this.culturaHistoria,
+    'Aventura e Adrenalina': this.aventuraAdrenalina,
+    'Paz e Tranquilidade': this.pazTranquilidade,
+    'Gastronomia e Drinks': this.gastronomiaDrinks,
+    'Compras e Souvenirs': this.comprasSouvenirs,
+    'Vida Noturna e Festas': this.vidaNoturnaFestas
+  };
+
   nextButtonVisible = false;
 
   ngOnInit(): void {
-    const viagemData = localStorage.getItem('viagemData');
-    if (viagemData) {
-      const parsedData = JSON.parse(viagemData);
-      this.diasViagem = parsedData.diasViagem || null;
-      this.budget = parsedData.budget || null;
-      this.localViagem = parsedData.localViagem || '';
-      this.indoTrabalho = parsedData.indoTrabalho || false;
-      this.horasTurismo = parsedData.horasTurismo || null;
-      this.selectedSeason = parsedData.season || '';
+    this.loadActivitiesFromLocalStorage();
+  }
 
-      if (parsedData.activities) {
-        this.selectedActivities = new Set(parsedData.activities.split(','));
-        console.log('Atividades recuperadas do localStorage:', this.selectedActivities);
+  loadActivitiesFromLocalStorage(): void {
+    const activity = localStorage.getItem('activity');
+    if (activity) {
+      const parsedData = JSON.parse(activity);
+      if (Array.isArray(parsedData.activities)) {
+        this.selectedActivities = new Set(parsedData.activities);
+        console.log('Atividades recuperadas do localStorage:', Array.from(this.selectedActivities));
+      } else {
+        console.log('Nenhuma atividade encontrada no localStorage.');
       }
+    } else {
+      console.log('Nenhum dado encontrado no localStorage.');
     }
   }
 
-  toggleImage(activity: string) {
+  // Função para listar as atividades
+  getActivityList(): string[] {
+    return this.activities;
+  }
+
+  // Função para alternar as atividades selecionadas
+  toggleActivity(activity: string): void {
+    console.log('Clicando na atividade:', activity); // Log para ver a atividade clicada
     if (this.selectedActivities.has(activity)) {
       this.selectedActivities.delete(activity);
     } else {
       this.selectedActivities.add(activity);
     }
-    console.log('Atividades selecionadas:', this.selectedActivities);
+    console.log('Atividades selecionadas:', Array.from(this.selectedActivities)); // Ver atividades selecionadas
     this.nextButtonVisible = this.selectedActivities.size > 0;
+
+    // Salvando as atividades no localStorage após a modificação
+    this.saveActivitiesToLocalStorage();
   }
 
+  // Verifica se a atividade está selecionada
   isSelected(activity: string): boolean {
     return this.selectedActivities.has(activity);
   }
 
+  // Obter a imagem associada a cada atividade
   getImage(activity: string): string {
-    switch (activity) {
-      case 'Cultura e História': return this.culturaHistoria;
-      case 'Aventura e Adrenalina': return this.aventuraAdrenalina;
-      case 'Paz e Tranquilidade': return this.pazTranquilidade;
-      case 'Gastronomia e Drinks': return this.gastronomiaDrinks;
-      case 'Compras e Souvenirs': return this.comprasSouvenirs;
-      case 'Vida Noturna e Festas': return this.vidaNoturnaFestas;
-      default: return this.culturaHistoria;
-    }
+    return this.activityImages[activity] || this.culturaHistoria;
+  }
+
+  // Função para salvar as atividades no localStorage
+  saveActivitiesToLocalStorage(): void {
+    const activity = { activities: Array.from(this.selectedActivities) };
+    console.log('Salvando atividades no localStorage:', activity.activities); // Ver dados antes de salvar
+    localStorage.setItem('activity', JSON.stringify(activity));
   }
 
   activitiesToQueryParams() {

@@ -20,9 +20,9 @@
   cursor: pointer;
   transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out;
   border: none;
-  width: 160px; 
-  height: 270px; 
-  margin: 10px; 
+  width: 160px;
+  height: 270px;
+  margin: 10px;
 
   .image-container {
     width: 140px;
@@ -52,7 +52,7 @@
   }
 
   &.active {
-    background-color: theme('colors.orange') !important;
+    background-color: #C07A47; /* Laranja */
   }
 }
 
@@ -62,7 +62,7 @@
   align-items: center;
   margin-top: 30px;
   padding: 15px 30px;
-  background-color: theme('colors.blue'); 
+  background-color: #2D7D89; /* Azul */
   color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -71,10 +71,10 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Akatab', sans-serif; 
+  font-family: 'Akatab', sans-serif;
 }
 
 .next-button:hover {
-  background-color: theme('colors.blue');
+  background-color: #2D7D89; /* Azul */
   opacity: 0.8;
 }

@@ -4,6 +4,7 @@
   <div class="flex justify-center items-center min-h-screen bg-opacity-50 bg-gray-100">
     <div class="card form-preference w-full max-w-md bg-yellow-50 shadow-lg p-6 rounded-lg relative z-10">
       <label class="title text-2xl font-semibold mb-4">Preferências de Viagem</label>
+      
       <div class="steps">
         <div class="step">
           <div>
@@ -45,17 +46,24 @@
             <input type="number" placeholder="Digite as horas livres" class="input_field w-full" [(ngModel)]="horasTurismo">
           </div>
         </div>
-        <!--? BOTAO DESABILITADO SE AS REGRAS NAO FOREM RESPEITADAS-->
+
+        <!-- Loader -->
+        <div *ngIf="loading" class="flex justify-center items-center mt-4">
+          <div class="spinner-border animate-spin border-t-4 border-blue-500 border-solid w-10 h-10 rounded-full"></div>
+        </div>
+
+        <!-- Botão Gerar Roteiro -->
         <button 
-        routerLink="/roteiro" 
         class="mt-6 w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300 disabled:bg-light-gray disabled:hover:bg-light-gray disabled:cursor-not-allowed" 
         (click)="gerarRoteiro()" 
-        [disabled]="!isFormValid()">
+        [disabled]="!isFormValid() || loading">
         Gerar Roteiro
       </button>
-            </div>
+      
+      </div>
     </div>
   </div>
+  
   <img src="assets/images/mundo.png" class="absolute bottom-16 left-20 w-50 object-cover" alt="Top Left Image">
   <img src="assets/images/polaroid1.png" class="absolute top-16 right-20 w-[30rem] object-cover" alt="Top Left Image">
 </div>

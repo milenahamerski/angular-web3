@@ -1,0 +1,30 @@
+
+  <div class="flex flex-col justify-between items-center min-h-screen mt-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8 gap-6 z-10">
+      <div *ngFor="let dia of roteiro" class="bg-white p-6 rounded-lg shadow-lg mb-6 w-72 h-72 flex flex-col">
+        <div class="card-header text-sand text-5xl font-italiana mb-4">
+          Dia {{ dia.dia }}
+        </div>
+        <div class="card-body flex-1">
+          <div class="text-blue mb-2"><strong>Manhã:</strong> {{ dia.manha }}</div>
+          <div class="text-blue mb-2"><strong>Tarde:</strong> {{ dia.tarde }}</div>
+          <div class="text-blue"><strong>Noite:</strong> {{ dia.noite }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex space-x-4 mt-auto">
+      <button 
+        (click)="gerarRoteiro()" 
+        class="bg-blue text-white px-6 py-2 rounded-lg shadow-md hover:bg-sand transition duration-300"
+      >
+        Gerar Novamente
+      </button>
+      <button 
+        (click)="salvarRoteiro()" 
+        class="bg-light-gray text-white px-6 py-2 rounded-lg shadow-md hover:bg-chalk transition duration-300"
+      >
+        Salvar Roteiro
+      </button>
+    </div>
+  </div>

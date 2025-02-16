@@ -1,12 +1,12 @@
 <div class="polaroid-buttons">
   <button 
-    *ngFor="let activity of activities"
-    (click)="toggleImage(activity)"
+    *ngFor="let activity of getActivityList()"
+    (click)="toggleActivity(activity)"
     [ngClass]="{ 'active': isSelected(activity) }"
     class="polaroid-button"
   >
     <div class="image-container">
-      <img [src]="getImage(activity)" alt="{{ activity }}" />
+      <img [src]="activityImages[activity]" alt="{{ activity }}" />
     </div>
     <span class="caption">{{ activity }}</span>
   </button>
