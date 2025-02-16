@@ -56,4 +56,27 @@ A avaliação da disciplina se dá pela entrega de um projeto de uma aplicação
 ## 📂 Links importantes
 
 - Protótipos: [https://www.figma.com/design/jOiTP4rxAaJDzGPnDZNpwi/Untitled?node-id=0-1&t=ppaJb3qFjNg7BTCP-1](#)
-- Deploy da aplicação: [Link para GitHub Pages](#)
+- Deploy da aplicação: [https://milenahamerski.github.io/roteirize/](#)
+
+## Executando a API com Ambiente Virtual (venv)
+
+Para rodar a API, você precisará configurar um ambiente virtual Python. Siga os passos abaixo para garantir que tudo esteja configurado corretamente:
+
+### Passo 1: Clone o Repositório
+
+Primeiro, clone o repositório para o seu computador:
+
+```sh
+git clone https://github.com/seu-usuario/roteirize.git
+cd api/teste.py
+python -m venv venv
+
+No Windows:
+.\venv\Scripts\activate
+
+No macOS ou Linux:
+source venv/bin/activate
+
+Passo 4: Instalar as Dependências da API
+Agora que o ambiente virtual está ativo, instale as dependências necessárias para rodar a API:
+pip install -r requirements.txt
