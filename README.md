@@ -1,27 +1,60 @@
-# Roteirize
+# Roteirize - Projeto de Avaliação
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+## Avaliação
 
-## Development server
+A avaliação da disciplina se dá pela entrega de um projeto de uma aplicação web desenvolvida para a matéria de **Web3** da **UTFPR - Campus Guarapuava**. O projeto utiliza o framework **Angular** e será desenvolvido progressivamente conforme o conteúdo semanal. A aplicação será avaliada com base em uma lista de tópicos a serem implementados e será considerada funcional quando atender ao escopo proposto. A aplicação envolve o desenvolvimento de componentes reutilizáveis, interface responsiva e integração com serviços, aplicando as práticas e tecnologias aprendidas ao longo do curso.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### RA1 - Prototipar e projetar interfaces gráficas de usuário
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [x] **ID1**: Desenvolveu protótipos de interfaces que demonstram compreensão das diretrizes de usabilidade.
+- [x] **ID2**: Projetou interfaces responsivas que se adaptam a diferentes tamanhos de tela.
 
-## Build
+### RA2 - Criar e reutilizar componentes em frameworks frontend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [x] **ID3**: Desenvolveu componentes reutilizáveis e responsivos.
+- [x] **ID4**: Incorporou componentes de frameworks CSS.
+- [x] **ID5**: Aplicou diretivas estruturais para exibir/ocultar conteúdo condicionalmente.
+- [x] **ID6**: Utilizou diretivas estruturais para criar listas dinâmicas.
+- [ ] **ID7**: Aplicou Pipes para formatar dados de maneira legível.
 
-## Running unit tests
+### RA3 - Sincronizar dados entre a interface gráfica e o modelo de dados
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [x] **ID8**: Utilizou técnicas de one-way data binding.
+- [x] **ID9**: Aplicou event binding para capturar eventos do usuário.
+- [x] **ID10**: Implementou two-way data binding.
+- [ ] **ID11**: Fez uso de variáveis de template para manipulação dinâmica de dados.
 
-## Running end-to-end tests
+### RA4 - Implementar comunicação eficaz entre componentes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [ ] **ID12**: Criou comunicação entre componentes não hierárquicos utilizando serviços.
+- [ ] **ID13**: Utilizou diretivas @Input e @Output para comunicação entre componentes.
 
-## Further help
+### RA5 - Criar interfaces de navegação intuitivas e responsivas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [ ] **ID14**: Configurou rotas para navegação entre páginas.
+- [ ] **ID15**: Passou dados entre componentes usando parâmetros de rotas.
+- [ ] **ID16**: Criou navegação aninhada para representar hierarquias.
+- [ ] **ID17**: Aplicou guardas de rotas para controle de acesso.
+
+### RA6 - Realizar requisições assíncronas para serviços web
+
+- [ ] **ID18**: Fez requisições assíncronas a uma API pública (GET).
+- [ ] **ID19**: Fez requisições assíncronas a uma API simulada (GET, POST, PUT, PATCH, DELETE).
+- [ ] **ID20**: Tratou respostas de sucesso e erros de requisições assíncronas.
+- [ ] **ID21**: Aplicou validações de entrada nos formulários.
+- [ ] **ID22**: Desabilitou o botão de submit com campos inválidos.
+- [ ] **ID23**: Utilizou Promises para tratar respostas assíncronas.
+- [ ] **ID24**: Utilizou Observables para tratar respostas assíncronas.
+
+### RA7 - Gerenciar o código-fonte de maneira eficiente
+
+- [ ] **ID25**: Criou o repositório no GitHub com a estrutura do **Gitflow**.
+- [ ] **ID26**: Colaborou efetivamente com outros membros, resolvendo conflitos de código.
+- [ ] **ID27**: Planejou, configurou e executou o processo de build e deploy da aplicação.
+
+## 📂 Links importantes
+
+- Protótipos: [Link para Figma](#)
+- Deploy da aplicação: [Link para GitHub Pages](#)
+- Repositório no GitHub: [Link para Repositório](#)

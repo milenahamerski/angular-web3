@@ -1,17 +1,42 @@
-<nav class="absolute top-0 left-0 w-full bg-transparent py-4 z-10">
-  <div class="container mx-auto flex justify-between items-center px-28">
-    <ul class="flex space-x-20 list-none text-2xl">
-      <li><a href="#" class="text-light-gray font-akatab hover:text-orange">Home</a></li>
-      <li><a href="#como-funciona" class="text-light-gray font-akatab hover:text-orange">Como Funciona</a></li>
-    </ul>
+<nav
+  class="absolute top-0 left-0 w-full py-4 z-20"
+  [ngClass]="{
+    'bg-transparent': rotaAtual === '/' || rotaAtual === '' || rotaAtual.startsWith('/login') || rotaAtual.startsWith('/signin'),
+    'bg-blue': !(rotaAtual === '/' || rotaAtual === '' || rotaAtual.startsWith('/login') || rotaAtual.startsWith('/signin'))
+  }"
+>
+  <div class="container mx-auto flex justify-between items-center px-8 md:px-28">
     
+    <!--? MENU DESKTOP -->
+    <ul class="hidden md:flex space-x-20 list-none text-2xl">
+      <li><a routerLink="/" class="text-light-gray font-akatab hover:text-orange">Home</a></li>
+      <li><a routerLink="/como-funciona" class="text-light-gray font-akatab hover:text-orange">Como Funciona</a></li>
+    </ul>
+
     <div class="text-light-gray text-2xl font-akatab mx-auto">
       <span>Logo</span>
     </div>
-    
-    <ul class="flex space-x-20 list-none text-2xl">
-      <li><a href="#contato" class="text-light-gray font-akatab hover:text-orange">Contato</a></li>
-      <li><a href="#sobre" class="text-light-gray font-akatab hover:text-orange">Sobre</a></li>
+
+    <ul class="hidden md:flex space-x-20 list-none text-2xl">
+      <li><a routerLink="/login" class="text-light-gray font-akatab hover:text-orange">Login</a></li>
+      <li><a routerLink="/signin" class="text-light-gray font-akatab hover:text-orange">Registre-se</a></li>
     </ul>
+
+    <!--? MENU HAMBURGUER - MOBILE -->
+    <div class="md:hidden flex items-center">
+      <button (click)="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-chalk">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!--? DROPDOWN -->
+  <div *ngIf="menuOpen" class="md:hidden flex flex-col space-y-4 mt-4 px-8 pb-4 bg-blue">
+    <a routerLink="/" class="text-light-gray font-akatab hover:text-orange">Home</a>
+    <a routerLink="/como-funciona" class="text-light-gray font-akatab hover:text-orange">Como Funciona</a>
+    <a routerLink="/login" class="text-light-gray font-akatab hover:text-orange">Login</a>
+    <a routerLink="/signin" class="text-light-gray font-akatab hover:text-orange">Registre-se</a>
   </div>
 </nav>

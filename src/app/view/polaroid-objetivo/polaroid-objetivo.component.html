@@ -1,0 +1,19 @@
+<div class="polaroid-buttons">
+  <button 
+    *ngFor="let activity of activities"
+    (click)="toggleImage(activity)"
+    [ngClass]="{ 'active': isSelected(activity) }"
+    class="polaroid-button"
+  >
+    <div class="image-container">
+      <img [src]="getImage(activity)" alt="{{ activity }}" />
+    </div>
+    <span class="caption">{{ activity }}</span>
+  </button>
+</div>
+
+<div *ngIf="nextButtonVisible">
+  <button routerLink="/formulario-preferencia" class="next-button" (click)="nextButtonVisible = false">
+    Seguinte
+  </button>
+</div>

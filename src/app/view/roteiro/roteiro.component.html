@@ -1,0 +1,35 @@
+<div class="roteiro-container p-6">
+  <h2 class="text-2xl font-semibold mb-4">Roteiro da Viagem</h2>
+  
+  <div *ngIf="viagemData">
+    <div class="mb-4">
+      <p><strong>Local da Viagem:</strong> {{ viagemData.localViagem }}</p>
+      <p><strong>Quantidade de Dias:</strong> {{ viagemData.diasViagem }}</p>
+      <p><strong>Orçamento:</strong> R$ {{ viagemData.budget }}</p>
+      <p><strong>Está indo a trabalho?</strong> {{ viagemData.indoTrabalho ? 'Sim' : 'Não' }}</p>
+      
+      <p *ngIf="viagemData.indoTrabalho">
+        <strong>Horas livres para turismo:</strong> {{ viagemData.horasTurismo }}
+      </p>
+
+      <!-- Exibir a estação -->
+      <p *ngIf="viagemData.season">
+        <strong>Estação selecionada:</strong> {{ viagemData.season }}
+      </p>
+
+      <!-- Exibir as atividades selecionadas -->
+      <div *ngIf="viagemData.activities">
+        <strong>Atividades selecionadas:</strong>
+        <ul>
+          <li *ngFor="let activity of viagemData.activities.split(',')">
+            {{ activity }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!viagemData" class="text-red-500">
+    <p>Não há informações de viagem disponíveis. Tente preencher o formulário primeiro.</p>
+  </div>
+</div>
