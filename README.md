@@ -80,3 +80,11 @@ source venv/bin/activate
 Passo 4: Instalar as Dependências da API
 Agora que o ambiente virtual está ativo, instale as dependências necessárias para rodar a API:
 pip install -r requirements.txt
+
+Agora, para rodar a API utilizando o Uvicorn, basta executar o seguinte comando no diretório do projeto:
+uvicorn api.teste:app --reload
+
+
+Agora, para rodar o JSON Server na porta 3001, execute o seguinte comando no diretório onde o arquivo db.json está localizado (no seu caso, parece que é em db.json):
+
+json-server --watch db.json --port 3001
